@@ -48,7 +48,6 @@ BOOL CImageProcToolView::PreCreateWindow(CREATESTRUCT& cs)
 {
 	// TODO: 在此处通过修改
 	//  CREATESTRUCT cs 来修改窗口类或样式
-
 	return CFormView::PreCreateWindow(cs);
 }
 

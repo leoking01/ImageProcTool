@@ -29,6 +29,15 @@ BEGIN_MESSAGE_MAP(CImageProcToolApp, CWinAppEx)
 END_MESSAGE_MAP()
 
 
+//#ifdef _MANAGED
+//using namespace System;
+//using namespace System::Reflection;
+//using namespace System::Runtime::CompilerServices;
+//using namespace System::Runtime::InteropServices;
+//using namespace System::Security::Permissions;
+//#endif
+
+
 // CImageProcToolApp 构造
 
 CImageProcToolApp::CImageProcToolApp()
@@ -38,6 +47,7 @@ CImageProcToolApp::CImageProcToolApp()
 	// 支持重新启动管理器
 	m_dwRestartManagerSupportFlags = AFX_RESTART_MANAGER_SUPPORT_ALL_ASPECTS;
 #ifdef _MANAGED
+	//using namespace  System;
 	// 如果应用程序是利用公共语言运行时支持(/clr)构建的，则:
 	//     1) 必须有此附加设置，“重新启动管理器”支持才能正常工作。
 	//     2) 在您的项目中，您必须按照生成顺序向 System.Windows.Forms 添加引用。

@@ -132,6 +132,7 @@
     <ClCompile Include="006View.cpp" />
     <ClCompile Include="005View.cpp" />
     <ClCompile Include="007View.cpp" />
+    <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="ChildFrm.cpp" />
     <ClCompile Include="ImageProcPlatDlg.cpp" />
     <ClCompile Include="MainFrm.cpp" />

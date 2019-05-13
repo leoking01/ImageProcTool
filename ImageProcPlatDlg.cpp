@@ -34,7 +34,6 @@ BEGIN_MESSAGE_MAP(ImageProcPlatDlg, CDialogEx)
 	ON_COMMAND(ID_32775, &ImageProcPlatDlg::On32775_toColor)
 	ON_COMMAND(ID_32776, &ImageProcPlatDlg::On32776_saveImageToFile)
 	ON_COMMAND(ID_32777, &ImageProcPlatDlg::On32777_onExit)
-
 END_MESSAGE_MAP()
 
 
