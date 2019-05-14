@@ -26,6 +26,7 @@ BEGIN_MESSAGE_MAP(CImageProcToolApp, CWinAppEx)
 	ON_COMMAND(ID_FILE_OPEN, &CWinAppEx::OnFileOpen)
 	ON_COMMAND(ID_32771, &CImageProcToolApp::On32771_lanchImageProcessingPlat)
 	ON_COMMAND(ID_32772, &CImageProcToolApp::On32772_lanchImageProcessingPlatTool)
+	ON_COMMAND(ID_32778, &CImageProcToolApp::On32778_studyGA)
 END_MESSAGE_MAP()
 
 
@@ -51,7 +52,7 @@ CImageProcToolApp::CImageProcToolApp()
 	// 如果应用程序是利用公共语言运行时支持(/clr)构建的，则:
 	//     1) 必须有此附加设置，“重新启动管理器”支持才能正常工作。
 	//     2) 在您的项目中，您必须按照生成顺序向 System.Windows.Forms 添加引用。
-	System::Windows::Forms::Application::SetUnhandledExceptionMode(System::Windows::Forms::UnhandledExceptionMode::ThrowException);
+	//System::Windows::Forms::Application::SetUnhandledExceptionMode(System::Windows::Forms::UnhandledExceptionMode::ThrowException);
 #endif
 
 	// TODO: 将以下应用程序 ID 字符串替换为唯一的 ID 字符串；建议的字符串格式
@@ -245,4 +246,14 @@ void CImageProcToolApp::On32772_lanchImageProcessingPlatTool()
 	// TODO: 在此添加命令处理程序代码
 	ImageProcPlatDlg  ipd;
 	ipd.DoModal();
+}
+
+#include "StudyGA.h"
+void CImageProcToolApp::On32778_studyGA()
+{
+	// TODO: 在此添加命令处理程序代码
+	AllocConsole();
+	freopen  ( "conout$", "w",  stdout );
+	mainGA();
+	FreeConsole();
 }

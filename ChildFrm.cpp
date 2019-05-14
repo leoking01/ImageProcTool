@@ -69,7 +69,8 @@ void CChildFrame::Dump(CDumpContext& dc) const
 BOOL CChildFrame::OnCreateClient(LPCREATESTRUCT /*lpcs*/,
 	CCreateContext* pContext)
 {
-	BOOL ret=m_wndSplitter.CreateStatic(this,3,2);
+	//BOOL ret=m_wndSplitter.CreateStatic(this,3,2);
+	BOOL ret=m_wndSplitter.CreateStatic(this,2,2);
 	if(!ret)
 	{
 		TRACE("SplitCreate Failed...\n");
@@ -79,14 +80,15 @@ BOOL CChildFrame::OnCreateClient(LPCREATESTRUCT /*lpcs*/,
 	//计算窗口尺寸
 	CRect rt;
 	GetClientRect(&rt);
-	CSize czPane(rt.Width()/2, rt.Height()/3);
+	//CSize czPane(rt.Width()/2, rt.Height()/3);
+	CSize czPane(rt.Width()/2, rt.Height()/2);
 
-
+	// -------------  1  ----------------
 	//创建接收数据显示窗口
 	pContext->m_pCurrentFrame=this;
 	ret=m_wndSplitter.CreateView(
 		0,0,
-		RUNTIME_CLASS(C001View),
+		RUNTIME_CLASS(C004View),
 		czPane,
 		pContext);
 	if(!ret)
@@ -95,11 +97,12 @@ BOOL CChildFrame::OnCreateClient(LPCREATESTRUCT /*lpcs*/,
 		return ret;
 	}
 
+	// -------------  2  ----------------
 	//创建发送数据显示窗口
 	pContext->m_pCurrentFrame=this;
 	ret=m_wndSplitter.CreateView(
 		0,1,
-		RUNTIME_CLASS(C002View),
+		RUNTIME_CLASS(C006View),
 		czPane,
 		pContext);
 	if(!ret)
@@ -108,41 +111,44 @@ BOOL CChildFrame::OnCreateClient(LPCREATESTRUCT /*lpcs*/,
 		return ret;
 	}
 
+	// -------------  3  ----------------
 	//创建调试数据显示窗口
 	pContext->m_pCurrentFrame=this;
 	ret=m_wndSplitter.CreateView(
 		1,0,
-		RUNTIME_CLASS(C003View),
+		RUNTIME_CLASS(C001View),
 		czPane,
 		pContext);
-	//
+	// -------------  4  ----------------
 	pContext->m_pCurrentFrame=this;
 	ret=m_wndSplitter.CreateView(
 		1,1,
-		RUNTIME_CLASS(C004View),
+		RUNTIME_CLASS(C002View),
 		czPane,
 		pContext);
 
-	//
-	pContext->m_pCurrentFrame=this;
-	ret=m_wndSplitter.CreateView(
-		2,0,
-		RUNTIME_CLASS(C005View),
-		czPane,
-		pContext);
-	//
-	pContext->m_pCurrentFrame=this;
-	ret=m_wndSplitter.CreateView(
-		2,1,
-		RUNTIME_CLASS(C006View),
-		//RUNTIME_CLASS(C007View),
-		czPane,
-		pContext);
-	if(!ret)
-	{
-		TRACE("Split CreateView Failed(3)...\n");
-		return ret;
-	}
+	////
+	//// -------------  5  ----------------
+	//pContext->m_pCurrentFrame=this;
+	//ret=m_wndSplitter.CreateView(
+	//	2,0,
+	//	RUNTIME_CLASS(C005View),
+	//	czPane,
+	//	pContext);
+	////
+	//// -------------  6  ----------------
+	//pContext->m_pCurrentFrame=this;
+	//ret=m_wndSplitter.CreateView(
+	//	2,1,
+	//	RUNTIME_CLASS(C006View),
+	//	//RUNTIME_CLASS(C007View),
+	//	czPane,
+	//	pContext);
+	//if(!ret)
+	//{
+	//	TRACE("Split CreateView Failed(3)...\n");
+	//	return ret;
+	//}
 
 
 	//初始化窗口

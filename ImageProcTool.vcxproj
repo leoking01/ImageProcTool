@@ -22,7 +22,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
-    <CLRSupport>false</CLRSupport>
+    <CLRSupport>true</CLRSupport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -119,6 +119,7 @@
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StudyGA.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="004View.h" />
     <ClInclude Include="ImageProcTool.h" />
@@ -144,6 +145,7 @@
     <ClCompile Include="ImageProcTool.cpp" />
     <ClCompile Include="ImageProcToolDoc.cpp" />
     <ClCompile Include="ImageProcToolView.cpp" />
+    <ClCompile Include="StudyGA.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ImageProcTool.rc" />

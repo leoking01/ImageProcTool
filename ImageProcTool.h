@@ -40,6 +40,7 @@ public:
 	
 	afx_msg void On32771_lanchImageProcessingPlat();
 	afx_msg void On32772_lanchImageProcessingPlatTool();
+	afx_msg void On32778_studyGA();
 };
 
 extern CImageProcToolApp theApp;

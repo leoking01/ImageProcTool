@@ -102,7 +102,25 @@ void ImageProcPlatDlg::On32776_saveImageToFile()
 {
 	// TODO: 在此添加命令处理程序代码
 	fetchFileName(  this->nameOfImageFileSave  );
-	imwrite(  this->nameOfImageFileSave.c_str(),  image_current  );
+	if( image_current.data  &&  !(this->nameOfImageFileSave.empty())  )
+	{
+		try
+		{
+			imwrite( ( this->nameOfImageFileSave+".record.jpg").c_str(),  image_current  );
+		}
+		catch (CMemoryException* e)
+		{
+			
+		}
+		catch (CFileException* e)
+		{
+		}
+		catch (CException* e)
+		{
+		}
+
+	}
+	
 }
 
 

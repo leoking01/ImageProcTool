@@ -25,7 +25,7 @@ protected:
 // Form Data
 public:
 	//{{AFX_DATA(C006View)
-	enum { IDD = IDD_VISIONPLATFORM_FORM   };
+	enum { IDD = IDD_DIALOG1_forView6   };
 		// NOTE: the ClassWizard will add data members here
 	//}}AFX_DATA
 	
