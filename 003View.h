@@ -51,8 +51,8 @@ protected:
 	DECLARE_MESSAGE_MAP()
 };
 #ifndef _DEBUG  // debug version in 001View.cpp
-inline CSpltDoc* C003View::GetDocument()
-   { return (CSpltDoc*)m_pDocument; }
+inline ImageProcToolDoc* C003View::GetDocument()
+   { return (ImageProcToolDoc*)m_pDocument; }
 #endif
 /////////////////////////////////////////////////////////////////////////////
 
